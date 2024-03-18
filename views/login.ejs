@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login page</title>
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <h1>Login Page</h1>
     <%- include("_nav.ejs") %>
 
     <h3>Login</h3>
-    <form action="">
+    <% if (locals.message){ %>
+    <p style="color: green"><%= message %></p>
+    <% } %>
+    <form action="/login" method="post">
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" />
